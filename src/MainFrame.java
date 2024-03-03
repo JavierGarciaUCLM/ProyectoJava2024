@@ -17,17 +17,25 @@ public class MainFrame extends JFrame{
     private JRadioButton viewDispenser3RadioButton;
     private JRadioButton viewDispenser2RadioButton;
     private JRadioButton viewDispenser1RadioButton;
+    //El mainPanel es el panel total
     private JPanel mainPanel;
+    //El logo es la imagen de las pastillas
     private JLabel logo;
 
     public MainFrame(){
+        //Necesitamos definir los valores de nuestro menu. Le ponemos el título de "Pharmacy". A la ventaña un tamaño
+        //de 980 de ancho x 600 de alto
         setContentPane(mainPanel);
         setTitle("Pharmacy");
         setSize(980, 600);
+        //El EXIT_ON_CLOSE hará que cuando el usuario cierre la ventana, también se pare el código
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //Básicamente para que se vea la ventana que hemos creado
         setVisible(true);
     }
 
+    //Se crea una instancia de la clase MainFrame y se estás almacenando en una variable llamada myFrame
+    //MainFrame es una clase creada para representar la ventana principal de la farmacia
     public static void main(String[] args){
         MainFrame myFrame = new MainFrame();
 
