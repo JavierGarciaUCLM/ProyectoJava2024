@@ -8,14 +8,14 @@ public class Dispenser  {
 
 
     private Medicine[][] dispenser;
-    private String[] nameVector;
 
-    public int numberdispenser;
+
+
 
     public Dispenser(int i) {
         this.dispenser = new Medicine[3][3];
-        this.nameVector = new String[20];
-        this.numberdispenser=i;
+
+
     }
 
     public int[] findMedicine(String name) {
