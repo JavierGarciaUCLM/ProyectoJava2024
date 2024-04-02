@@ -18,15 +18,15 @@ public class Dispenser  {
         this.numberdispenser=i;
     }
 
-    public int findMedicine(String name) {
+    public int[] findMedicine(String name) {
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; i <3; i++) {
-                if (dispenser[i][j] != null && dispenser[i][j].equals(name)) {
-                    return i;
+            for (int j = 0; j < 3; j++) {
+                if (dispenser[i][j] != null && dispenser[i][j].nameMedicine.equals(name)) {
+                    return new int[]{i, j};
                 }
             }
         }
-        return -1;
+        return new int[]{-1, -1}; // No encontrada
     }
 
     public Medicine extractMedicine(String name,int nItems) {
