@@ -18,7 +18,7 @@ public class Dispenser  {
         this.numberdispenser=i;
     }
 
-    public int findMedicine(String name,int in, int jn) {
+    public int findMedicine(String name) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; i <3; i++) {
                 if (dispenser[i][j] != null && dispenser[i][j].equals(name)) {
