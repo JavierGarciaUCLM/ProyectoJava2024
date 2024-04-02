@@ -3,9 +3,11 @@ package Classes;
 public class Pharmacy {
 
     public Dispenser[] dispensers;
+    int x;
 
     public Pharmacy(Dispenser[] dispensers) {
         this.dispensers = new Dispenser[4];
+
     }
 
 
