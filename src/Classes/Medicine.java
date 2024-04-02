@@ -1,11 +1,13 @@
-package resources;
+package Classes;
 
 public class Medicine {
 
     int id;
     String indications;
     String manufacturer;
+    String[] nameMedicine;
     int units;
+
 
     public Medicine(){}
 
@@ -17,6 +19,7 @@ public class Medicine {
      * @param units
      */
     public Medicine(int id, String indications, String manufacturer, int units) {
+        this.nameMedicine= new String[20];
         this.id = id;
         this.indications = indications;
         this.manufacturer = manufacturer;
