@@ -24,6 +24,8 @@ public class Pharmacy extends JFrame {
     public int[] findPositions(String name) {
 
 
+
+
         int[] isThere = {-1, -1, -1};
 
 
@@ -46,21 +48,7 @@ public class Pharmacy extends JFrame {
 
     }
 
-    public void ImprimirDescripcion(String name) {
-        int[] positionmedicamento = new int[3];
 
-        positionmedicamento = findPositions(name);
-        if (positionmedicamento[0] != -1) {
-            int p = positionmedicamento[0];
-            int i = positionmedicamento[1];
-            int j = positionmedicamento[2];
-
-
-
-
-        }
-
-    }
 
 
 

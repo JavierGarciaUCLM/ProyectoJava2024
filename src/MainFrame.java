@@ -44,7 +44,9 @@ public class MainFrame extends JFrame {
         buttonInformationFlyer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String companyName = textFieldCompanyName.getText(); // Obtiene el texto del campo textFieldCompanyName
+                String companyName = textFieldMedicine.getText(); // Obtiene el texto del campo textFieldCompanyName
+                System.out.println("main: "+companyName);
+
                 int[] positionmedicamento = farmacia.findPositions(companyName);
                 if (positionmedicamento[0] != -1) {
                     int p = positionmedicamento[0];
@@ -54,6 +56,7 @@ public class MainFrame extends JFrame {
                     Medicine medicamentoEncontrado = farmacia.dispensers[p].dispenser[i][j];
                     if (medicamentoEncontrado != null) {
                         xTextArea.setText(medicamentoEncontrado.getNameMedicine());
+
                     } else {
                         xTextArea.setText("Medicamento no encontrado.");
                     }
@@ -66,17 +69,29 @@ public class MainFrame extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            Dispenser[] dispensers = new Dispenser[4]; // Asumiendo que se inicializan correctamente más adelante
-            // Inicializa cada Dispenser aquí según sea necesario, por ejemplo:
-            // dispensers[0] = new Dispenser();
-            // ... y así sucesivamente para cada dispenser
+
+            Dispenser[] dispensers = new Dispenser[4];
+            // Inicializa cada Dispenser aquí
+            // dispensers[0] = new Dispenser().....segun los que se necesiten si añades mas hay que cambiarlos en la definicion new Dispenser[x];
+
             for(int i=0;i<3;i++){
-                dispensers[i]= new Dispenser();
+                dispensers[i]= new Dispenser();//aqui se inicializan los Dispensadores
           }
-            dispensers[2].dispenser[2][2].setName("Paracetamol");
+
 
             Pharmacy farmacia = new Pharmacy(dispensers);
+
+
+
             new MainFrame(farmacia).setVisible(true);
+
+            //Aqui se pueden rellenar manualmente los dispensadores,por defecto estan vacios y no seran contados a la hora de buscar.Ejm
+
+            farmacia.dispensers[2].dispenser[2][1].setName("Hola");
+            farmacia.dispensers[2].dispenser[2][1].setUnits(20);
+
+
+
         });
     }
 }

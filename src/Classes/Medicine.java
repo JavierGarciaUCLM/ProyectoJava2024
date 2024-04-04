@@ -5,26 +5,26 @@ public class Medicine {
     int id;
     String indications;
     String manufacturer;
-    String nameMedicine="Paracetamol";
+    String nameMedicine;
     int units;
 
 
-    public Medicine(){}
-
-    /**
-     * Constructor of Medicine
-     * @param id
-     * @param indications
-     * @param manufacturer
-     * @param units
-     */
 
     public Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {
         this.id = id;
         this.indications = indications; // Usar el argumento
         this.manufacturer = manufacturer; // Usar el argumento
-         // Asegurarse de asignar nameMedicine correctamente
-        this.units = units;
+
+        this.units=0;
+
+    }
+    public Medicine(){
+
+        this.id = -1;
+        this.indications = ""; // Usar el argumento
+        this.manufacturer = ""; // Usar el argumento
+        this.nameMedicine="";
+        this.units=-1;
     }
 
 

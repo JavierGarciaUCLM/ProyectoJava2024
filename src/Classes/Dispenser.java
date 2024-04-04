@@ -26,9 +26,14 @@ public class Dispenser   {
     }
 
     public int[] findMedicine(String name) {
+
+
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (dispenser[i][j] != null && dispenser[i][j].nameMedicine.equals(name)&& dispenser[i][j].nameMedicine != null && dispenser[i][j].units>0) {
+                String nameMedicine=dispenser[i][j].getNameMedicine();
+                System.out.println(nameMedicine);
+                if (nameMedicine.equals(name) && dispenser[i][j].units>0) {
                     return new int[]{i, j};
                 }
             }
