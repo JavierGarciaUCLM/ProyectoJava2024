@@ -1,5 +1,6 @@
 import Classes.Dispenser;
 import Classes.Pharmacy;
+import Classes.Medicine;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -56,15 +57,43 @@ public class MainFrame extends JFrame{
                 int[] positionmedicamento = new int[3];
 
                 positionmedicamento = farmacia.findPositions(getTextFieldCompanyName.getText());
+                if(positionmedicamento[0]!=-1){
                 int p=positionmedicamento[0];
                 int i=positionmedicamento[1];
                 int j=positionmedicamento[2];
 
+                Medicine Medicamentoencontrado =new Medicine();
+                Medicamentoencontrado= farmacia.dispensers[p].dispenser[i][j];
+                xTextArea.setText(Medicamentoencontrado.getIndications());
+
+
+
+
+
+
+            }
             }
         });
 
 
-    }}
+    }
+
+
+
+
+    public static void main(String[] args) {
+
+
+
+    }
+
+
+
+
+
+}
+
+
 
     //Se crea una instancia de la clase MainFrame y se estás almacenando en una variable llamada myFrame
     //MainFrame es una clase creada para representar la ventana principal de la farmacia
