@@ -1,4 +1,5 @@
 import Classes.Dispenser;
+import Classes.Pharmacy;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,6 +12,9 @@ public class MainFrame extends JFrame{
     private JButton buttonRefill;
     private JButton buttonDispenseList;
     private JTextField textFieldCompanyName;
+
+    public JTextField getTextFieldCompanyName=new JTextField(20);
+
     private JLabel lbMedicine;
     private JLabel lbCompanyName;
     private JLabel lbNumItems;
@@ -26,10 +30,11 @@ public class MainFrame extends JFrame{
     //El logo es la imagen de las pastillas
     private JLabel logo;
 
-    Dispenser dispenser1 = new Dispenser(1);
-    Dispenser dispenser2 = new Dispenser(2);
 
-    Dispenser dispenser3 = new Dispenser(3);
+
+    Dispenser[] dispensers= new Dispenser[4];
+    Pharmacy farmacia= new Pharmacy(dispensers);
+
 
 
     public MainFrame(){
@@ -48,21 +53,19 @@ public class MainFrame extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                int[] positionmedicamento = new int[3];
 
-
-
+                positionmedicamento = farmacia.findPositions(getTextFieldCompanyName.getText());
+                int p=positionmedicamento[0];
+                int i=positionmedicamento[1];
+                int j=positionmedicamento[2];
 
             }
         });
-    }
+
+
+    }}
 
     //Se crea una instancia de la clase MainFrame y se estás almacenando en una variable llamada myFrame
     //MainFrame es una clase creada para representar la ventana principal de la farmacia
-    public static void main(String[] args){
-        MainFrame myFrame = new MainFrame();
 
-
-
-
-    }
-}

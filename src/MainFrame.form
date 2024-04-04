@@ -152,7 +152,9 @@
             <preferred-size width="245" height="30"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="68ce" class="javax.swing.JLabel" binding="logo">
         <constraints>
