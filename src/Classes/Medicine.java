@@ -14,8 +14,8 @@ public class Medicine {
         this.id = -1;
         this.indications = ""; // Usar el argumento
         this.manufacturer = ""; // Usar el argumento
-        this.nameMedicine="hola";
-        this.units=5;
+        this.nameMedicine="";
+        this.units=0;
     }
 
     public  Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {
