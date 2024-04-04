@@ -17,13 +17,14 @@ public class Dispenser   {
 
         for (int i=0; i< dispenser.length;i++){
             for(int j=0; j< dispenser.length;j++){
-                dispenser[i][j]= new Medicine();
+
+                dispenser[i][j] = new Medicine();}
             }
         }
 
 
 
-    }
+
 
     public int[] findMedicine(String name) {
 

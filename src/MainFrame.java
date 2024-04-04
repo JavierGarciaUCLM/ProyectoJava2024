@@ -45,6 +45,7 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String companyName = textFieldMedicine.getText(); // Obtiene el texto del campo textFieldCompanyName
+
                 System.out.println("main: "+companyName);
 
                 int[] positionmedicamento = farmacia.findPositions(companyName);
@@ -55,7 +56,7 @@ public class MainFrame extends JFrame {
 
                     Medicine medicamentoEncontrado = farmacia.dispensers[p].dispenser[i][j];
                     if (medicamentoEncontrado != null) {
-                        xTextArea.setText(medicamentoEncontrado.getNameMedicine());
+                        xTextArea.setText("Name: "+medicamentoEncontrado.getNameMedicine()+"\nManufacturer:"+medicamentoEncontrado.getManufacturer()+"\nUnits:"+medicamentoEncontrado.getUnits());
 
                     } else {
                         xTextArea.setText("Medicamento no encontrado.");
@@ -87,8 +88,10 @@ public class MainFrame extends JFrame {
 
             //Aqui se pueden rellenar manualmente los dispensadores,por defecto estan vacios y no seran contados a la hora de buscar.Ejm
 
-            farmacia.dispensers[2].dispenser[2][1].setName("Hola");
-            farmacia.dispensers[2].dispenser[2][1].setUnits(20);
+
+            farmacia.dispensers[2].dispenser[2][1]= new Medicine(2,"adios","hola","h",3);
+            farmacia.dispensers[2].dispenser[2][1].setUnits(15);
+
 
 
 

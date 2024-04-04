@@ -9,22 +9,23 @@ public class Medicine {
     int units;
 
 
-
-    public Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {
-        this.id = id;
-        this.indications = indications; // Usar el argumento
-        this.manufacturer = manufacturer; // Usar el argumento
-
-        this.units=0;
-
-    }
     public Medicine(){
 
         this.id = -1;
         this.indications = ""; // Usar el argumento
         this.manufacturer = ""; // Usar el argumento
-        this.nameMedicine="";
-        this.units=-1;
+        this.nameMedicine="hola";
+        this.units=5;
+    }
+
+    public  Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {
+        this.id = id;
+        this.indications = indications; // Usar el argumento
+        this.manufacturer = manufacturer; // Usar el argumento
+        this.nameMedicine = nameMedicine;
+
+        this.units=units;
+
     }
 
 
@@ -65,4 +66,5 @@ public class Medicine {
     public void setUnits(int units) {
         this.units = units;
     }
+
 }
