@@ -9,8 +9,13 @@ public class Pharmacy extends JFrame {
 
     public Pharmacy(Dispenser[] dispensers) {
         this.dispensers = new Dispenser[4];
-
+        for (int i = 0; i < this.dispensers.length; i++) {
+            this.dispensers[i] = new Dispenser(); // Inicializa cada Dispenser
+        }
     }
+
+
+
 
 
 
