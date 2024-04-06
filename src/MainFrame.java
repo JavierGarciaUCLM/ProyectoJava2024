@@ -66,6 +66,66 @@ public class MainFrame extends JFrame {
                 }
             }
         });
+        viewDispenser1RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xTextArea.setText(""); // Limpiar el área de texto antes de agregar nuevos nombres
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 2; j >= 0; --j) {
+                        String word1 = farmacia.dispensers[0].dispenser[i][j].getNameMedicine();
+                        String word2 = farmacia.dispensers[0].dispenser[i][j].getManufacturer();
+                        xTextArea.append("Name Medicine: "+word1 +"           "+"Manufacturer: " +word2 + "\n");
+
+
+                    }
+                }
+            }
+        });
+        viewDispenser2RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xTextArea.setText(""); // Limpiar el área de texto antes de agregar nuevos nombres
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 2; j >= 0; --j) {
+                        String word1 = farmacia.dispensers[1].dispenser[i][j].getNameMedicine();
+                        String word2 = farmacia.dispensers[1].dispenser[i][j].getManufacturer();
+                        xTextArea.append("Name Medicine: "+word1 +"           "+"Manufacturer: " +word2 + "\n");
+
+
+                    }
+                }
+            }
+        });
+        viewDispenser3RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xTextArea.setText(""); // Limpiar el área de texto antes de agregar nuevos nombres
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 2; j >= 0; --j) {
+                        String word1 = farmacia.dispensers[2].dispenser[i][j].getNameMedicine();
+                        String word2 = farmacia.dispensers[2].dispenser[i][j].getManufacturer();
+                        xTextArea.append("Name Medicine: "+word1 +"           "+"Manufacturer: " +word2 + "\n");
+
+
+                    }
+                }
+            }
+        });
+        viewDispenser4RadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                xTextArea.setText(""); // Limpiar el área de texto antes de agregar nuevos nombres
+                for (int i = 0; i < 3; i++) {
+                    for (int j = 2; j >= 0; --j) {
+                        String word1 = farmacia.dispensers[3].dispenser[i][j].getNameMedicine();
+                        String word2 = farmacia.dispensers[3].dispenser[i][j].getManufacturer();
+                        xTextArea.append("Name Medicine: "+word1 +"           "+"Manufacturer: " +word2 + "\n");
+
+
+                    }
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -89,8 +149,17 @@ public class MainFrame extends JFrame {
             //Aqui se pueden rellenar manualmente los dispensadores,por defecto estan vacios y no seran contados a la hora de buscar.Ejm
 
 
-            farmacia.dispensers[2].dispenser[2][1]= new Medicine(2,"adios","hola","h",3);
-            farmacia.dispensers[2].dispenser[2][1].setUnits(15);
+            farmacia.dispensers[0].dispenser[0][0]= new Medicine(1,"adios","hola","con",3);
+            farmacia.dispensers[0].dispenser[0][1]= new Medicine(2,"adios","que","hecho",3);
+            farmacia.dispensers[0].dispenser[0][2]= new Medicine(3,"adios","tal","roncola",3);
+            farmacia.dispensers[0].dispenser[1][0]= new Medicine(4,"adios","estas","de",3);
+            farmacia.dispensers[0].dispenser[1][1]= new Medicine(5,"adios","yo","poco",3);
+            farmacia.dispensers[0].dispenser[1][2]= new Medicine(6,"adios","bastante","un",3);
+            farmacia.dispensers[0].dispenser[2][0]= new Medicine(7,"adios","bien","cola",3);
+            farmacia.dispensers[0].dispenser[2][1]= new Medicine(8,"adios","hola","y",3);
+            farmacia.dispensers[0].dispenser[2][2]= new Medicine(9,"adios","hola","ron",3);
+
+
 
 
 
