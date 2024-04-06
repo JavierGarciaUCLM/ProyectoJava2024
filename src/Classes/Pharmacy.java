@@ -47,6 +47,39 @@ public class Pharmacy extends JFrame {
         return isThere;
 
     }
+    public int dispendMedicicine(String name,int amount){
+
+        for (int i = 0; i < 4; i++) {
+
+            int x=dispensers[i].takeMedicine(name,amount);
+            amount=amount-x;
+
+            if(amount==0){
+                return 0;
+            }
+
+        }return -1;
+
+
+    }
+    public void refillStockAll(String name,String company,int amount){
+
+        for (int i=0; i<4;i++){
+            dispensers[i].refillStockAll(amount,name,company);
+        }
+
+    }
+    public void refillOneMedicine(String name,int amount){
+
+        int[] position=findPositions(name);
+
+        int z=position[0];
+        int x=position[1];
+        int y= position[2];
+
+        dispensers[z].refillOneMedicine(amount,x,y);
+
+    }
 
 
 

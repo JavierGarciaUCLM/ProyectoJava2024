@@ -46,7 +46,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String companyName = textFieldMedicine.getText(); // Obtiene el texto del campo textFieldCompanyName
 
-                System.out.println("main: "+companyName);
+
 
                 int[] positionmedicamento = farmacia.findPositions(companyName);
                 if (positionmedicamento[0] != -1) {
@@ -59,10 +59,10 @@ public class MainFrame extends JFrame {
                         xTextArea.setText("Name: "+medicamentoEncontrado.getNameMedicine()+"\nManufacturer:"+medicamentoEncontrado.getManufacturer()+"\nUnits:"+medicamentoEncontrado.getUnits());
 
                     } else {
-                        xTextArea.setText("Medicamento no encontrado.");
+                        xTextArea.setText("Medicamento no encontrado o agotado.");
                     }
                 } else {
-                    xTextArea.setText("Medicamento no encontrado.");
+                    xTextArea.setText("Medicamento no encontrado o agotado");
                 }
             }
         });
@@ -124,6 +124,41 @@ public class MainFrame extends JFrame {
 
                     }
                 }
+            }
+        });
+        buttonMedicine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+                String nameMedicine=textFieldMedicine.getText();
+                int amount=Integer.parseInt(textFieldNumItems.getText());
+                String nameCompany=textFieldCompanyName.getText();
+
+
+
+                    if (farmacia.dispendMedicicine(nameMedicine, amount) == 0) {
+
+                        xTextArea.setText("Cantidad sacada correctamente");
+
+                    } else xTextArea.setText("Cantidad insuficiente en almacen,rellenando automaticamente.Intentelo de nuevo");
+                    farmacia.refillStockAll(nameMedicine,nameCompany,10);                                  //aumentan todos los medicamentos con este nombre en  10
+
+
+            }
+        });
+        buttonRefill.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String nameCompany=textFieldCompanyName.getText();
+                String nameMedicine=textFieldMedicine.getText();
+                int amount=Integer.parseInt(textFieldNumItems.getText());
+
+                farmacia.refillOneMedicine(nameMedicine,amount);
+
+                xTextArea.setText("rellenado corectamente");
+
             }
         });
     }
