@@ -44,11 +44,11 @@ public class MainFrame extends JFrame {
         buttonInformationFlyer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String companyName = textFieldMedicine.getText(); // Obtiene el texto del campo textFieldCompanyName
+                String name = textFieldMedicine.getText(); // Obtiene el texto del campo textFieldCompanyName
+                String nameCompany=textFieldCompanyName.getText();
 
 
-
-                int[] positionmedicamento = farmacia.findPositions(companyName);
+                int[] positionmedicamento = farmacia.findPositions(name,nameCompany);
                 if (positionmedicamento[0] != -1) {
                     int p = positionmedicamento[0];
                     int i = positionmedicamento[1];
@@ -170,7 +170,7 @@ public class MainFrame extends JFrame {
                 String nameMedicine=textFieldMedicine.getText();
                 int amount=Integer.parseInt(textFieldNumItems.getText());
 
-                farmacia.refillOneMedicine(nameMedicine,amount);
+                farmacia.refillOneMedicine(nameMedicine,amount,nameMedicine);
 
                 xTextArea.setText("rellenado corectamente");
 

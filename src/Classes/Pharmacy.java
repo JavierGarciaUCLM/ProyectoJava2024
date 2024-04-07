@@ -21,7 +21,7 @@ public class Pharmacy extends JFrame {
 
 
 
-    public int[] findPositions(String name) {
+    public int[] findPositions(String name,String nameCompany) {
 
 
 
@@ -30,7 +30,7 @@ public class Pharmacy extends JFrame {
 
 
         for (int i = 0; i < 4; i++) {
-            int[] positions = dispensers[i].findMedicine(name);
+            int[] positions = dispensers[i].findMedicine(name,nameCompany);
 
             if (positions[0] != -1) {// Medicina encontrada
 
@@ -69,9 +69,9 @@ public class Pharmacy extends JFrame {
         }
 
     }
-    public void refillOneMedicine(String name,int amount){
+    public void refillOneMedicine(String name,int amount,String nameCompany){
 
-        int[] position=findPositions(name);
+        int[] position=findPositions(name,nameCompany);
 
         int z=position[0];
         int x=position[1];

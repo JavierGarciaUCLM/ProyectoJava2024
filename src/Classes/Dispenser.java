@@ -26,15 +26,16 @@ public class Dispenser   {
 
 
 
-    public int[] findMedicine(String name) {
+    public int[] findMedicine(String name,String nameCompany) {
 
 
 
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 15; j++) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
+                String namecompany=dispenser[i][j].getManufacturer();
 
-                if (nameMedicine.equals(name) && dispenser[i][j].units>0) {
+                if (nameMedicine.equals(name) && dispenser[i][j].units>0 && namecompany.equals(nameCompany)) {
                     return new int[]{i, j};
                 }
             }
