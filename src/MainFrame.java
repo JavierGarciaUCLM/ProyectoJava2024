@@ -147,7 +147,8 @@ public class MainFrame extends JFrame {
                 String nameMedicine=textFieldMedicine.getText();
                 int amount=Integer.parseInt(textFieldNumItems.getText());
                 String nameCompany=textFieldCompanyName.getText();
-                int cantidadRestante=farmacia.dispendMedicicine(nameMedicine, amount);
+
+                int cantidadRestante=farmacia.dispendMedicicine(nameMedicine, amount,nameMedicine);
 
 
                     if (cantidadRestante == 0) {

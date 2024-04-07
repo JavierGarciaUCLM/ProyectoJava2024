@@ -47,11 +47,11 @@ public class Pharmacy extends JFrame {
         return isThere;
 
     }
-    public int dispendMedicicine(String name,int amount){
+    public int dispendMedicicine(String name,int amount,String nameCompany){
 
         for (int i = 0; i < 4; i++) {
 
-            int x=dispensers[i].takeMedicine(name,amount);
+            int x=dispensers[i].takeMedicine(name,amount,nameCompany);
             amount=amount-x;
 
             if(amount==0){

@@ -43,13 +43,14 @@ public class Dispenser   {
     }
 
 
-    public int takeMedicine(String name,int x){
+    public int takeMedicine(String name,int x,String nameCompany){
 
         int numberMedicine=0;
         for (int i = 0; i < 20; i++) {
             for (int j = 14; j >=0; --j) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
-                if (nameMedicine.equals(name) && dispenser[i][j].units>0) {
+                String namecompany=dispenser[i][j].getManufacturer();
+                if (nameMedicine.equals(name) && namecompany.equals(nameCompany)&&dispenser[i][j].units>0) {
 
                     do{
                         dispenser[i][j].units=dispenser[i][j].units -1;
@@ -71,7 +72,8 @@ public class Dispenser   {
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j < 15; j++) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
-                if (nameMedicine.equals(name)){
+                String namecompany=dispenser[i][j].getManufacturer();
+                if (nameMedicine.equals(name)&& namecompany.equals(company)){
 
                 dispenser[i][j].units = dispenser[i][j].units + amount;
 
