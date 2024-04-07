@@ -23,19 +23,17 @@ public class MainFrame extends JFrame{
     private JLabel logo;
 
     public MainFrame(){
-        //Necesitamos definir los valores de nuestro menu. Le ponemos el título de "Pharmacy". A la ventaña un tamaño
-        //de 980 de ancho x 600 de alto
+        //Values for the menu need to be set, the title is "Pharmacy". Finally, a 980x600 window is defined.
         setContentPane(mainPanel);
         setTitle("Pharmacy");
         setSize(980, 600);
         //El EXIT_ON_CLOSE when the window closes, teh codes stops.
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        //Básicamente para que se vea la ventana que hemos creado
+        //This line is made so that the window created can be seen
         setVisible(true);
     }
-
-    //Se crea una instancia de la clase MainFrame y se estás almacenando en una variable llamada myFrame
-    //MainFrame es una clase creada para representar la ventana principal de la farmacia
+    //An instance of the class "MainFrame" is created and then, stored in a variable called myFrame.
+    //Main frame is a class created for representing the main window
     public static void main(String[] args){
         MainFrame myFrame = new MainFrame();
 
