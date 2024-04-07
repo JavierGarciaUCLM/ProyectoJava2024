@@ -170,7 +170,7 @@ public class MainFrame extends JFrame {
                 String nameMedicine=textFieldMedicine.getText();
                 int amount=Integer.parseInt(textFieldNumItems.getText());
 
-                farmacia.refillOneMedicine(nameMedicine,amount,nameMedicine);
+              farmacia.refillOneMedicine(nameMedicine, amount, nameCompany);
 
                 xTextArea.setText("rellenado corectamente");
 
