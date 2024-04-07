@@ -1,6 +1,6 @@
 package Classes;
 
-import Classes.Medicine;
+
 
 public class Dispenser   {
 
@@ -13,10 +13,10 @@ public class Dispenser   {
 
 
     public Dispenser() {
-        this.dispenser = new Medicine[3][3];
+        this.dispenser = new Medicine[20][15];
 
-        for (int i=0; i< dispenser.length;i++){
-            for(int j=0; j< dispenser.length;j++){
+        for (int i=0; i< 20;i++){
+            for(int j=0; j<15;j++){
 
                 dispenser[i][j] = new Medicine();}
             }
@@ -30,8 +30,8 @@ public class Dispenser   {
 
 
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 15; j++) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
 
                 if (nameMedicine.equals(name) && dispenser[i][j].units>0) {
@@ -46,13 +46,13 @@ public class Dispenser   {
     public int takeMedicine(String name,int x){
 
         int numberMedicine=0;
-        for (int i = 0; i < 3; i++) {
-            for (int j = 2; j <=0; --j) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 14; j >=0; --j) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
                 if (nameMedicine.equals(name) && dispenser[i][j].units>0) {
 
                     do{
-                        --dispenser[i][j].units;
+                        dispenser[i][j].units=dispenser[i][j].units -1;
                         numberMedicine++;
                     }while(x>numberMedicine && dispenser[i][j].units>0);
 
@@ -68,8 +68,8 @@ public class Dispenser   {
 
 
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 15; j++) {
                 String nameMedicine=dispenser[i][j].getNameMedicine();
                 if (nameMedicine.equals(name)){
 

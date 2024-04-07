@@ -58,7 +58,7 @@ public class Pharmacy extends JFrame {
                 return 0;
             }
 
-        }return -1;
+        }return amount;
 
 
     }
