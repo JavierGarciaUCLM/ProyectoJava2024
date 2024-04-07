@@ -40,7 +40,7 @@ public class Dispenser   {
                 }
             }
         }
-        return new int[]{-1, -1}; // No encontrada
+        return new int[]{-1, -1}; // Not found.
     }
 
 
