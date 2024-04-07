@@ -17,9 +17,9 @@ public class MainFrame extends JFrame{
     private JRadioButton viewDispenser3RadioButton;
     private JRadioButton viewDispenser2RadioButton;
     private JRadioButton viewDispenser1RadioButton;
-    //El mainPanel es el panel total
+    //Whole panel
     private JPanel mainPanel;
-    //El logo es la imagen de las pastillas
+    //Pills Image
     private JLabel logo;
 
     public MainFrame(){
@@ -28,7 +28,7 @@ public class MainFrame extends JFrame{
         setContentPane(mainPanel);
         setTitle("Pharmacy");
         setSize(980, 600);
-        //El EXIT_ON_CLOSE hará que cuando el usuario cierre la ventana, también se pare el código
+        //El EXIT_ON_CLOSE when the window closes, teh codes stops.
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //Básicamente para que se vea la ventana que hemos creado
         setVisible(true);
