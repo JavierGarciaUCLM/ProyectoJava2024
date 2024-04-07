@@ -15,7 +15,7 @@ public class Medicine {
         this.indications = ""; // Uses the argument
         this.manufacturer = ""; // Uses the argument
         this.nameMedicine="";
-        this.units=5;
+        this.units=0;
     }
 
     public  Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {

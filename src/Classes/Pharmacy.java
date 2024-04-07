@@ -5,6 +5,8 @@ import javax.swing.*;
 public class Pharmacy extends JFrame {
 
     public Dispenser[] dispensers;
+    private Medicine[] medicamentosDispensados;
+    private int contadorMedicamentos=0;
 
 
     public Pharmacy(Dispenser[] dispensers) {
@@ -12,16 +14,18 @@ public class Pharmacy extends JFrame {
         for (int i = 0; i < this.dispensers.length; i++) {
             this.dispensers[i] = new Dispenser(); // Inicializa cada Dispenser
         }
+        medicamentosDispensados = new Medicine[1000];
     }
 
+    public Medicine[] getMedicamentosDispensados() {
+        return medicamentosDispensados;
+    }
 
+    public int getContadorMedicamentos() {
+        return contadorMedicamentos;
+    }
 
-
-
-
-
-
-    public int[] findPositions(String name,String nameCompany) {
+    public int[] findPositions(String name, String nameCompany) {
 
 
 
@@ -83,20 +87,23 @@ public class Pharmacy extends JFrame {
 
 
 
+    public void agregarMedicamentoDispensado(Medicine medicamento, int cantidad) {
 
 
+        for (int i = 0; i < contadorMedicamentos; i++) {
+            if (medicamentosDispensados[i].nameMedicine.equals(medicamento.nameMedicine) && medicamentosDispensados[i].manufacturer.equals(medicamento.manufacturer)) {
+                medicamentosDispensados[i].units += cantidad;
+                return;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
+        // Agrega un nuevo medicamento
+        if (contadorMedicamentos < medicamentosDispensados.length) {
+            medicamentosDispensados[contadorMedicamentos] = medicamento;
+            medicamentosDispensados[contadorMedicamentos].units=cantidad;
+            contadorMedicamentos++;
+        }
+    }
 
 
 

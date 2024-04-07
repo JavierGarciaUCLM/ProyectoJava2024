@@ -77,6 +77,9 @@ public class Dispenser   {
                 if (nameMedicine.equals(name)&& namecompany.equals(company)){
 
                 dispenser[i][j].units = dispenser[i][j].units + amount;
+                if(dispenser[i][j].units>20){
+                    dispenser[i][j].units = 20;
+                }
 
                 }
 
@@ -91,6 +94,9 @@ public class Dispenser   {
 
 
         dispenser[x][y].units = dispenser[x][y].units + amount;
+        if(dispenser[x][y].units>20) {
+            dispenser[x][y].units = 20;
+        }
 
     }
 

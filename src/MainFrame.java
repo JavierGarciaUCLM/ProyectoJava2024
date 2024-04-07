@@ -70,7 +70,7 @@ public class MainFrame extends JFrame {
         viewDispenser1RadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                xTextArea.setText(""); // Limpiar el área de texto antes de agregar nuevos nombres
+                xTextArea.setText(""); // Para limpiar el área de texto antes de agregar nuevos nombres
                 for (int i = 0; i < 20; i++) {
                     for (int j = 14; j >= 0; --j) {
                         if(farmacia.dispensers[0].dispenser[i][j].getId()!=-1){
@@ -143,21 +143,30 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                xTextArea.setText("");
 
                 String nameMedicine=textFieldMedicine.getText();
                 int amount=Integer.parseInt(textFieldNumItems.getText());
                 String nameCompany=textFieldCompanyName.getText();
 
-                int cantidadRestante=farmacia.dispendMedicicine(nameMedicine, amount,nameMedicine);
+                Medicine Medicamento = new Medicine();
+                Medicamento.setName(nameMedicine);
+                Medicamento.setUnits(amount);
+                Medicamento.setManufacturer(nameCompany);
+
+                int cantidadRestante=farmacia.dispendMedicicine(nameMedicine, amount,nameCompany);
+
 
 
                     if (cantidadRestante == 0) {
 
                         xTextArea.setText("Cantidad sacada correctamente");
+                        farmacia.agregarMedicamentoDispensado(Medicamento,amount);
 
-                    } else {xTextArea.setText("Cantidad insuficiente en almacen,rellenando automaticamente.\n\nCantidad Restante: "+cantidadRestante);
+                    } else {xTextArea.setText("Cantidad insuficiente en almacen,rellenando automaticamente con 5.\n\nCantidad Restante: "+cantidadRestante);
                     farmacia.refillStockAll(nameMedicine,nameCompany,5);
-                    }                                //aumentan todos los medicamentos con este nombre en  10
+                    farmacia.agregarMedicamentoDispensado(Medicamento,(amount-cantidadRestante));
+                    }
 
 
             }
@@ -166,13 +175,30 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+                xTextArea.setText("");
+
                 String nameCompany=textFieldCompanyName.getText();
                 String nameMedicine=textFieldMedicine.getText();
                 int amount=Integer.parseInt(textFieldNumItems.getText());
 
-                farmacia.refillOneMedicine(nameMedicine,amount,nameMedicine);
+                farmacia.refillOneMedicine(nameMedicine,amount,nameCompany);
 
-                xTextArea.setText("rellenado corectamente");
+                xTextArea.setText("Succesfull");
+
+            }
+        });
+        buttonDispenseList.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Medicine[] medicamentosDispensados =farmacia.getMedicamentosDispensados();
+
+                xTextArea.setText("");
+
+                for (int i = 0; i < farmacia.getContadorMedicamentos(); i++) {
+                    Medicine m = medicamentosDispensados[i];
+                    xTextArea.append("Name: " + m.getNameMedicine() + "       Manufacturer: " + m.getManufacturer() + "     Amount Dispend: " +medicamentosDispensados[i].getUnits() + "\n");
+                }
 
             }
         });
@@ -199,20 +225,20 @@ public class MainFrame extends JFrame {
             //Aqui se pueden rellenar manualmente los dispensadores,por defecto estan vacios y no seran contados a la hora de buscar.Ejm
 
 
-            farmacia.dispensers[0].dispenser[0][1]= new Medicine(2,"for fever","Johnson & Johnson","Ibuprofen",23);
-            farmacia.dispensers[0].dispenser[0][2]= new Medicine(3,"for infection","Bayer","Amoxicillin",34);
-            farmacia.dispensers[0].dispenser[0][3]= new Medicine(4,"for upset stomach","Pfizer","Omeprazole",37);
-            farmacia.dispensers[0].dispenser[0][4]= new Medicine(5,"for anxiety","Johnson & Johnson","Diazepam",30);
-            farmacia.dispensers[0].dispenser[0][5]= new Medicine(6,"for allergies","AstraZeneca","Loratadine",83);
-            farmacia.dispensers[0].dispenser[0][6]= new Medicine(7,"for inflammation","Bayer","Aspirin",73);
-            farmacia.dispensers[0].dispenser[0][7]= new Medicine(8,"for diabetes","Pfizer","Ciprofloxacin",63);
-            farmacia.dispensers[0].dispenser[0][8]= new Medicine(9,"for cholesterol","AstraZeneca","Atorvastatin",35);
-            farmacia.dispensers[0].dispenser[0][9] = new Medicine(10, "for allergies", "Sanofi", "Cetirizine", 23);
-            farmacia.dispensers[0].dispenser[0][10] = new Medicine(11, "for pain", "Takeda", "Tramadol", 83);
-            farmacia.dispensers[0].dispenser[0][11] = new Medicine(12, "for cholesterol", "AstraZeneca", "Rosuvastatin", 12);
+            farmacia.dispensers[0].dispenser[0][1]= new Medicine(2,"for fever","Johnson & Johnson","Ibuprofen",20);
+            farmacia.dispensers[0].dispenser[0][2]= new Medicine(3,"for infection","Bayer","Amoxicillin",20);
+            farmacia.dispensers[0].dispenser[0][3]= new Medicine(4,"for upset stomach","Pfizer","Omeprazole",20);
+            farmacia.dispensers[0].dispenser[0][4]= new Medicine(5,"for anxiety","Johnson & Johnson","Diazepam",20);
+            farmacia.dispensers[0].dispenser[0][5]= new Medicine(6,"for allergies","AstraZeneca","Loratadine",20);
+            farmacia.dispensers[0].dispenser[0][6]= new Medicine(7,"for inflammation","Bayer","Aspirin",20);
+            farmacia.dispensers[0].dispenser[0][7]= new Medicine(8,"for diabetes","Pfizer","Ciprofloxacin",20);
+            farmacia.dispensers[0].dispenser[0][8]= new Medicine(9,"for cholesterol","AstraZeneca","Atorvastatin",20);
+            farmacia.dispensers[0].dispenser[0][9] = new Medicine(10, "for allergies", "Sanofi", "Cetirizine", 20);
+            farmacia.dispensers[0].dispenser[0][10] = new Medicine(11, "for pain", "Takeda", "Tramadol", 20);
+            farmacia.dispensers[0].dispenser[0][11] = new Medicine(12, "for cholesterol", "AstraZeneca", "Rosuvastatin", 20);
             farmacia.dispensers[0].dispenser[0][12] = new Medicine(13, "for stomach ache", "Johnson & Johnson", "Pantoprazole", 20);
-            farmacia.dispensers[0].dispenser[0][13] = new Medicine(14, "for depression", "Bayer", "Escitalopram", 34);
-            farmacia.dispensers[0].dispenser[0][14] = new Medicine(15, "for depression", "Merck", "Fluoxetine", 76);
+            farmacia.dispensers[0].dispenser[0][13] = new Medicine(14, "for depression", "Bayer", "Escitalopram", 20);
+            farmacia.dispensers[0].dispenser[0][14] = new Medicine(15, "for depression", "Merck", "Fluoxetine", 20);
 
 
 
