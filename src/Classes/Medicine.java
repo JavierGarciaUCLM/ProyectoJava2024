@@ -12,16 +12,16 @@ public class Medicine {
     public Medicine(){
 
         this.id = -1;
-        this.indications = ""; // Usar el argumento
-        this.manufacturer = ""; // Usar el argumento
+        this.indications = ""; // Uses the argument
+        this.manufacturer = ""; // Uses the argument
         this.nameMedicine="";
         this.units=5;
     }
 
     public  Medicine(int id, String indications, String manufacturer, String nameMedicine, int units) {
         this.id = id;
-        this.indications = indications; // Usar el argumento
-        this.manufacturer = manufacturer; // Usar el argumento
+        this.indications = indications; // Uses the argument
+        this.manufacturer = manufacturer; // Uses the argument
         this.nameMedicine = nameMedicine;
 
         this.units=units;
