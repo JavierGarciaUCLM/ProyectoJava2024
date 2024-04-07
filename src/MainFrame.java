@@ -56,7 +56,7 @@ public class MainFrame extends JFrame {
 
                     Medicine medicamentoEncontrado = farmacia.dispensers[p].dispenser[i][j];
                     if (medicamentoEncontrado != null) {
-                        xTextArea.setText(medicamentoEncontrado.getIndications());
+                        xTextArea.setText(medicamentoEncontrado.getIndications()+"  Cantidad:"+farmacia.dispensers[p].dispenser[i][j].getUnits());
 
 
                     } else {
@@ -225,13 +225,13 @@ public class MainFrame extends JFrame {
             //Aqui se pueden rellenar manualmente los dispensadores,por defecto estan vacios y no seran contados a la hora de buscar.Ejm
 
 
-            farmacia.dispensers[0].dispenser[0][1]= new Medicine(2,"for fever","Johnson & Johnson","Ibuprofen",20);
-            farmacia.dispensers[0].dispenser[0][2]= new Medicine(3,"for infection","Bayer","Amoxicillin",20);
-            farmacia.dispensers[0].dispenser[0][3]= new Medicine(4,"for upset stomach","Pfizer","Omeprazole",20);
-            farmacia.dispensers[0].dispenser[0][4]= new Medicine(5,"for anxiety","Johnson & Johnson","Diazepam",20);
-            farmacia.dispensers[0].dispenser[0][5]= new Medicine(6,"for allergies","AstraZeneca","Loratadine",20);
-            farmacia.dispensers[0].dispenser[0][6]= new Medicine(7,"for inflammation","Bayer","Aspirin",20);
-            farmacia.dispensers[0].dispenser[0][7]= new Medicine(8,"for diabetes","Pfizer","Ciprofloxacin",20);
+            farmacia.dispensers[0].dispenser[0][1]= new Medicine(2,"for fever","Johnson & Johnson","Ibuprofen",40);
+            farmacia.dispensers[0].dispenser[0][2]= new Medicine(3,"for infection","Bayer","Amoxicillin",40);
+            farmacia.dispensers[0].dispenser[0][3]= new Medicine(4,"for upset stomach","Pfizer","Omeprazole",40);
+            farmacia.dispensers[0].dispenser[0][4]= new Medicine(5,"for anxiety","Johnson & Johnson","Diazepam",40);
+            farmacia.dispensers[0].dispenser[0][5]= new Medicine(6,"for allergies","AstraZeneca","Loratadine",40);
+            farmacia.dispensers[0].dispenser[0][6]= new Medicine(7,"for inflammation","Bayer","Aspirin",40);
+            farmacia.dispensers[0].dispenser[0][7]= new Medicine(8,"for diabetes","Pfizer","Ciprofloxacin",40);
             farmacia.dispensers[0].dispenser[0][8]= new Medicine(9,"for cholesterol","AstraZeneca","Atorvastatin",20);
             farmacia.dispensers[0].dispenser[0][9] = new Medicine(10, "for allergies", "Sanofi", "Cetirizine", 20);
             farmacia.dispensers[0].dispenser[0][10] = new Medicine(11, "for pain", "Takeda", "Tramadol", 20);

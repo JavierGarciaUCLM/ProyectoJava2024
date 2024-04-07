@@ -78,7 +78,7 @@ public class Dispenser   {
 
                 dispenser[i][j].units = dispenser[i][j].units + amount;
                 if(dispenser[i][j].units>20){
-                    dispenser[i][j].units = 20;
+                    dispenser[i][j].units = 100;
                 }
 
                 }
@@ -95,7 +95,7 @@ public class Dispenser   {
 
         dispenser[x][y].units = dispenser[x][y].units + amount;
         if(dispenser[x][y].units>20) {
-            dispenser[x][y].units = 20;
+            dispenser[x][y].units = 100;
         }
 
     }
